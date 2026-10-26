@@ -1,0 +1,57 @@
+# ------------------------------------------------------------------ build output
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.docstates
+
+# ------------------------------------------------------------------ Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ------------------------------------------------------------------ input data
+# Imagery is never committed. GDAL overviews (external pyramids) are derived data too.
+samples/
+*.tif
+*.tiff
+*.jp2
+*.img
+*.vrt
+*.ovr
+*.aux.xml
+
+# ------------------------------------------------------------------ annotations and outputs
+annotations/
+output/
+train/data/
+train/runs/
+*.geojson
+*.kml
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.gpkg
+
+# ------------------------------------------------------------------ model weights
+# Only the small sidecars (*.onnx.json, classes.json) belong in git.
+models/*
+!models/*.json
+models/sam/
+*.onnx
+*.onnx.data
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# ------------------------------------------------------------------ local-only docs and backups
+CLAUDE.md
+.backup*/
+.backup2_*/
+*.log

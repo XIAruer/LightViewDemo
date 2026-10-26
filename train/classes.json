@@ -1,0 +1,14 @@
+{
+  "num_classes": 7,
+  "ignore_index": 255,
+  "classes": [
+    { "id": 0, "name": "background", "name_zh": "背景", "color_bgr": [0, 0, 0] },
+    { "id": 1, "name": "building", "name_zh": "建筑", "color_bgr": [0, 0, 222] },
+    { "id": 2, "name": "road", "name_zh": "道路", "color_bgr": [255, 255, 255] },
+    { "id": 3, "name": "farmland", "name_zh": "农田", "color_bgr": [73, 181, 75] },
+    { "id": 4, "name": "woodland", "name_zh": "林地", "color_bgr": [38, 97, 34] },
+    { "id": 5, "name": "water", "name_zh": "水体", "color_bgr": [255, 69, 0] },
+    { "id": 6, "name": "bareland", "name_zh": "裸地", "color_bgr": [0, 128, 128] }
+  ],
+  "notes": "Masks must be single-channel PNG with pixel values = class id (0-6). 255 = ignore. Color masks can be converted via prepare_tiles.py --color-mask."
+}

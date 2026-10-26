@@ -1,0 +1,10 @@
+{
+  "name": "geobase/sparsemask (OpenEarthMap 8-class, SparseMask NAS, MIT)",
+  "input_size": 1024,
+  "normalize": "mean_std",
+  "mean": [0.4325, 0.4483, 0.3879],
+  "std":  [0.0195, 0.0169, 0.0179],
+  "class_names": ["bareland", "rangeland", "developed space", "road", "tree", "water", "agriculture land", "buildings"],
+  "class_map": [6, 4, 1, 2, 4, 5, 3, 1],
+  "notes": "OpenEarthMap 8 类 -> 本项目 7 类调色板。映射: bareland->裸地, rangeland->林地, developed space->建筑, road->道路, tree->林地, water->水体, agriculture land->农田, buildings->建筑。输出 logits 是输入分辨率的 1/2，代码已自动上采样。"
+}

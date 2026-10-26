@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>LandCoverShell</RootNamespace>
+    <AssemblyName>LandCoverShell</AssemblyName>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+
+  <!-- The shell is a thin host: the two views stay in their own projects and keep working
+       standalone, so an Exe-to-Exe project reference is what wires them together. -->
+  <ItemGroup>
+    <ProjectReference Include="..\LandCover.Core\LandCover.Core.csproj" />
+    <ProjectReference Include="..\LandCoverInfer\LandCoverInfer.csproj" />
+    <ProjectReference Include="..\LandCoverLabeler\LandCoverLabeler.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\train\classes.json" Link="classes.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>LandCoverLabeler</RootNamespace>
+    <AssemblyName>LandCoverLabeler</AssemblyName>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LandCover.Core\LandCover.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- One dialog source, compiled into each GUI: neither app references the other. -->
+    <Compile Include="..\Shared\ModelDownloadDialog.cs" Link="ModelDownloadDialog.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\train\classes.json" Link="classes.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+# Training + data prep. Install into the project venv:  python -m pip install -r train/requirements.txt
+#
+# torch: CPU builds are fine for this project and much smaller. To get one explicitly:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24
+Pillow>=10.0
+
+# Preferred encoder + decoder zoo (DeepLabV3+ / U-Net / FPN / SegFormer).
+segmentation-models-pytorch>=0.3.3
+
+# ONNX export. torch >= 2.9 routes torch.onnx.export through the dynamo exporter,
+# which imports onnxscript; without it the export fails with ModuleNotFoundError.
+onnx>=1.16
+onnxscript>=0.2
+
+# GDAL-backed raster reading for prepare_tiles.py. rasterio ships its own GDAL, so this
+# is a far easier install than the `gdal` python bindings and needs no OSGeo4W.
+rasterio>=1.3
